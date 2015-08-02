@@ -2897,9 +2897,22 @@ table th[class*="span"],
   content: "";
 }
 
+.caret-right {             /* New style for caret pointing right */
+    border-left: 4px solid @black;
+    border-right: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
 .dropdown .caret {
   margin-top: 8px;
   margin-left: 2px;
+}
+.dropdown .caret-right {             /* New style for caret pointing right */
+    border-left: 4px solid @black;
+    border-right: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
 }
 
 .dropdown-menu {
@@ -3796,6 +3809,13 @@ input[type="submit"].btn.btn-mini {
 .btn .caret {
   margin-top: 8px;
   margin-left: 0;
+}
+
+.btn .caret-right {             /* New style for caret pointing right */
+    border-left: 4px solid @black;
+    border-right: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
 }
 
 .btn-large .caret {
