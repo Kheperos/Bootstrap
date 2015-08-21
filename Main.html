@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </head>
 <body>
-
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
 
 <div class="container">
     <div class="navbar navbar-inverse">
@@ -45,7 +44,7 @@
 <div class="container">
     <ul class="nav nav-pills nav-stacked span3">
         <li class="active dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Jean Valjean
+            <a class="dropdown-toggle" data-toggle="tab" href="#tab12">Jean Valjean
                 <span class="caret hide"></span>
             </a>
             <u1 class="dropdown-menu">
@@ -58,7 +57,7 @@
             </u1>
         </li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Terra Incognita
+            <a class="dropdown-toggle" data-toggle="tab" href="#tab13">Terra Incognita
                 <span class="caret hide"></span>
             </a>
             <u1 class="dropdown-menu">
@@ -87,7 +86,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Alexandru Robicek
                 <span class="caret hide"></span>
             </a>
-            <u1 class="dropdown-menu">
+            <u1 class="dropdown-menu pull-right">
                     <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:600px;height:600px">
                     <p>Jean Valjan</p>
                     <p>Badges:</p>
@@ -124,6 +123,40 @@
         </li>
     </ul>
 </div>
+
+<div class ="container">
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab12"><p>Jean Valjean something</p></div>
+        <div class="tab-pane" id="tab13"><p>Terra incognita something</p></div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2>Dropdown Example</h2>
+    <p>Click on the Dropdown button below. <strong>event.relatedTarget</strong> returns the element which triggered the dropdown.</p>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function()
+    {
+        $(".dropdown").on("show.bs.dropdown", function(event){
+            var x = $(event.relatedTarget).text(); // Get the button text
+            alert("You clicked on: " + x);
+        });
+    });
+</script>
 <!-- Save the Code if button is best
     <ul class="btn-group btn-group-vertical">
         <li>
@@ -211,5 +244,7 @@
 </div>
 
 -->
+
+<!--<script src="MoveDropdown.js"></script> -->
 </body>
 </html>

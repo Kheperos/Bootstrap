@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <title>Bootstrap 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src = "angularMain.js"></script>
     <style>
         hr {
             display: block;
@@ -19,10 +23,7 @@
     </style>
 
 </head>
-<body>
-
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<body ng-app = "myApp">
 
 <div class="container">
     <div class="navbar navbar-inverse">
@@ -56,7 +57,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" ng-controller = "root">
     <hr>
     <h2>TIER1</h2>
     <div class="row">
@@ -69,6 +70,20 @@
                     <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:40px;height:40px">
                     <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:40px;height:40px">
                     <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:40px;height:40px">
+                    <div class ="clearfix"> </div>
+                </a>
+            </div>
+        </div>
+
+         <div class="span4">
+            <div class="clearfix content-heading">
+                <a href="img/Image1.jpg" class="thumbnail">
+                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:150px;height:150px">
+                    <p>Pulpit Rock:gdffd</p>
+                    <p>Badges:</p>
+                    <div class="pull-left"  ng-repeat = "badge in users.badges">
+                        <img ng-src = "{{badge.location}}" alt="Toy Badgde" style="width:40px;height:40px">>
+                    </div>
                     <div class ="clearfix"> </div>
                 </a>
             </div>
