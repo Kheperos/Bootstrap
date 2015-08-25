@@ -6,10 +6,13 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src = "angularMain.js"></script>
+    <script src = "tooltip.js"></script>
 
 </head>
-<body>
+<body ng-app = "myApp">
 
 <div class="container">
     <div class="navbar navbar-inverse">
@@ -41,210 +44,24 @@
     </div>
 </div>
 
-<div class="container">
-    <ul class="nav nav-pills nav-stacked span3">
-        <li class="active dropdown">
-            <a class="dropdown-toggle" data-toggle="tab" href="#tab12">Jean Valjean
-                <span class="caret hide"></span>
-            </a>
-            <u1 class="dropdown-menu">
-                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:600px;height:600px">
-                    <p>Jean Valjan</p>
-                    <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:100px;height:100px">
-            </u1>
+<div class="container" ng-controller = "root">
+    <div class="nav nav-pills nav-stacked span3">
+        <li ng-repeat = "user in users">
+            <a href="#"  ng-click = "userSelected(this)">{{user.name}}</a>
         </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="tab" href="#tab13">Terra Incognita
-                <span class="caret hide"></span>
-            </a>
-            <u1 class="dropdown-menu">
-                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:600px;height:600px">
-                    <p>Jean Valjan</p>
-                    <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:100px;height:100px">
-            </u1>
-        </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tudor Dimitriu
-                <span class="caret hide"></span>
-            </a>
-            <u1 class="dropdown-menu">
-                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:600px;height:600px">
-                    <p>Jean Valjan</p>
-                    <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:100px;height:100px"
-            </u1>
-        </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Alexandru Robicek
-                <span class="caret hide"></span>
-            </a>
-            <u1 class="dropdown-menu pull-right">
-                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:600px;height:600px">
-                    <p>Jean Valjan</p>
-                    <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:100px;height:100px">
-            </u1>
-        </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Andreea Duta
-                <span class="caret hide"></span>
-            </a>
-            <u1 class="dropdown-menu">
-                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:600px;height:600px">
-                    <p>Jean Valjan</p>
-                    <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:100px;height:100px">
-            </u1>
-        </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Eugen Popescu
-                <span class="caret hide"></span>
-            </a>
-            <u1 class="dropdown-menu">
-                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:600px;height:600px">
-                    <p>Jean Valjan</p>
-                    <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:100px;height:100px">
-                    <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:100px;height:100px">
-            </u1>
-        </li>
-    </ul>
-</div>
-
-<div class ="container">
-    <div class="tab-content">
-        <div class="tab-pane active" id="tab12"><p>Jean Valjean something</p></div>
-        <div class="tab-pane" id="tab13"><p>Terra incognita something</p></div>
+    </div>
+    <div class="tab-content span7">
+        <img ng-src="{{selectedUser.picture}}" alt="{{selectedUser.name}}" style="width:300px;height:300px">
+        <p>{{selectedUser.name}}</p>
+        <p>{{selectedUser.description}}</p>
+        <p>Badges:</p>
+        <div class="pull-left"  ng-repeat = "badge in selectedUser.ownedBadges">
+            <img rel="tooltip" tooltip = "" ng-src = "{{badges[badge].location}}" style="width:40px;height:40px">
+        </div>
     </div>
 </div>
 
 
-<div class="container">
-    <h2>Dropdown Example</h2>
-    <p>Click on the Dropdown button below. <strong>event.relatedTarget</strong> returns the element which triggered the dropdown.</p>
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Dropdown Example
-            <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-        </ul>
-    </div>
-</div>
 
-<script>
-    $(document).ready(function()
-    {
-        $(".dropdown").on("show.bs.dropdown", function(event){
-            var x = $(event.relatedTarget).text(); // Get the button text
-            alert("You clicked on: " + x);
-        });
-    });
-</script>
-<!-- Save the Code if button is best
-    <ul class="btn-group btn-group-vertical">
-        <li>
-            <button class="btn dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Jean Valjan
-                <span class="caret caret-right"></span></button>
-            <u1 class="dropdown-menu pull-right">
-                <div class="clearfix content-heading pull-right">
-                        <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:300px;height:300px">
-                        <p>Jean Valjan</p>
-                        <p>Badges:</p>
-                        <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:40px;height:40px">
-                        <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:40px;height:40px">
-                        <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:40px;height:40px">
-                        <div class ="clearfix"> </div>
-                </div>
-            </u1>
-        </li>
-        <li>
-            <button class="btn dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Terra Incognita
-                <span class="caret caret-right"></span></button>
-            <ul class="dropdown-menu">
-                <div class="clearfix content-heading pull-right">
-                    <a href="img/Image2.jpg" class="thumbnail">
-                        <img class="pull-left" src="img/Image2.jpg" alt="Pulpit Rock" style="width:300px;height:300px">
-                        <p>Terra Incognita</p>
-                        <p>Badges:</p>
-                        <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:40px;height:40px">
-                        <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:40px;height:40px">
-                        <div class ="clearfix"> </div>
-                    </a>
-                </div>
-            </ul>
-        </li>
-        <li> <button class="btn" type="button" id="Jera">Tudor Dimitriu</button></li>
-        <li> <button class="btn" type="button" id="Jera">Alexandru Robicek</button></li>
-        <li> <button class="btn" type="button" id="Jera">Andreea Duta</button></li>
-        <li> <button class="btn" type="button" id="Jera">Eugen Popescu</button></li>
-        <li><a href="#">...</a></li>
-    </ul>
-
-
-
-
-
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Roster
-            <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <li class="dropdown-submenu">
-                <a tabindex="-1" href="#">Jean Valjan</a>
-                <ul class="dropdown-menu">
-                    <div class="clearfix content-heading">
-                        <a href="img/Image1.jpg" class="thumbnail">
-                            <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:300px;height:300px">
-                            <p>Jean Valjan</p>
-                            <p>Badges:</p>
-                            <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:40px;height:40px">
-                            <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:40px;height:40px">
-                            <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:40px;height:40px">
-                            <div class ="clearfix"> </div>
-                        </a>
-                    </div>
-                </ul>
-            </li>
-            <li class="dropdown-submenu">
-                <a tabindex="-1" href="#">Terra Incognita</a>
-                <ul class="dropdown-menu">
-                    <div class="clearfix content-heading">
-                        <a href="img/Image2.jpg" class="thumbnail">
-                            <img class="pull-left" src="img/Image2.jpg" alt="Pulpit Rock" style="width:300px;height:300px">
-                            <p>Terra Incognita</p>
-                            <p>Badges:</p>
-                            <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:40px;height:40px">
-                            <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:40px;height:40px">
-                            <div class ="clearfix"> </div>
-                        </a>
-                    </div>
-                </ul>
-            </li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Jesus Wept</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">The Horror Team</a></li>
-        </ul>
-    </div>
-</div>
-
--->
-
-<!--<script src="MoveDropdown.js"></script> -->
 </body>
 </html>

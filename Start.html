@@ -57,119 +57,63 @@
     </div>
 </div>
 
-<div class="container-fluid" ng-controller = "root">
+<div class="container" ng-controller = "root">
     <hr>
     <h2>TIER1</h2>
     <div class="row">
-        <div class="span4">
+        <div class="span4" ng-repeat = "user in users | filter : {rank : '1'} ">
             <div class="clearfix content-heading">
-                <a href="img/Image1.jpg" class="thumbnail">
-                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:150px;height:150px">
-                    <p>Pulpit Rock:gdffd</p>
+                <a href="{{user.picture}}" class="thumbnail">
+                    <img class="pull-left" ng-src="{{user.picture}}" alt="{{user.name}}" style="width:150px;height:150px">
+                    <p>{{user.name}}</p>
                     <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:40px;height:40px">
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:40px;height:40px">
-                    <img class="pull-left" src="img/Badge3.jpg" alt="Toy Badgde" style="width:40px;height:40px">
-                    <div class ="clearfix"> </div>
-                </a>
-            </div>
-        </div>
-
-         <div class="span4">
-            <div class="clearfix content-heading">
-                <a href="img/Image1.jpg" class="thumbnail">
-                    <img class="pull-left" src="img/Image1.jpg" alt="Pulpit Rock" style="width:150px;height:150px">
-                    <p>Pulpit Rock:gdffd</p>
-                    <p>Badges:</p>
-                    <div class="pull-left"  ng-repeat = "badge in users.badges">
-                        <img ng-src = "{{badge.location}}" alt="Toy Badgde" style="width:40px;height:40px">>
+                    <div class="pull-left"  ng-repeat = "badge in user.ownedBadges">
+                        <img ng-src = "{{badges[badge].location}}"  alt = "{{badges[badge].name}}" style="width:40px;height:40px">
                     </div>
                     <div class ="clearfix"> </div>
                 </a>
             </div>
         </div>
-
-        <div class="span4">
-            <div class="clearfix content-heading">
-                <a href="img/Image2.jpg" class="thumbnail">
-                    <img class="pull-left" src="img/Image2.jpg" alt="Pulp" style="width:150px;height:150px">
-                    <p>Monast:</p>
-                    <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge1.jpg" alt="Cia Badgde" style="width:40px;height:40px">
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:40px;height:40px">
-                    <div class ="clearfix"> </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="span4">
-            <div class="clearfix content-heading">
-                <a href="img/Image3.jpg" class="thumbnail">
-                    <img class="pull-left" src="img/Image3.jpg" alt="Pulpit Rock" style="width:150px;height:150px">
-                    <p>Pulpit Rock:</p>
-                    <p>Badges:</p>
-                    <img class="pull-left" src="img/Badge2.jpg" alt="Police Badgde" style="width:40px;height:40px">
-                    <div class ="clearfix"> </div>
-                </a>
-            </div>
-        </div>
-
-
-        <div class="span4">
-            <a href="img/Image4.jpg" class="thumbnail">
-                <p>The Jorn Aburque</p>
-                <img src="img/Image3.jpg" alt="Cinque Terre" style="width:150px;height:150px">
-            </a>
-        </div>
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container" ng-controller = "root">
     <hr>
     <h2>TIER2</h2>
     <div class="row">
-        <div class="span3">
-            <a href="img/Image5.jpg" class="thumbnail">
-                <p>Pulpit Rock:</p>
-                <img src="img/Image5.jpg" alt="Pulpit Rock" style="width:150px;height:150px">
-            </a>
+        <div class="span4" ng-repeat = "user in users | filter : {rank : '2'} ">
+            <div class="clearfix content-heading">
+                <a href="{{user.picture}}" class="thumbnail">
+                    <img class="pull-left" ng-src="{{user.picture}}" alt="{{user.name}}" style="width:150px;height:150px">
+                    <p>{{user.name}}</p>
+                    <p>Badges:</p>
+                    <div class="pull-left"  ng-repeat = "badge in user.ownedBadges">
+                        <img ng-src = "{{badges[badge].location}}"  alt = "{{badges[badge].name}}" style="width:40px;height:40px">
+                    </div>
+                    <div class ="clearfix"> </div>
+                </a>
+            </div>
         </div>
-
-        <div class="span3">
-            <a href="img/Image6.jpg" class="thumbnail">
-                <p>Moustiers-Sainte-Marie.</p>
-                <img src="img/Image6.jpg" alt="Moustiers Sainte Marie" style="width:150px;height:150px">
-            </a>
-        </div>
-
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container" ng-controller = "root">
     <hr>
     <h2>TIER3</h2>
     <div class="row">
-        <div class="span3">
-            <a href="img/Image7.jpg" class="thumbnail">
-                <p>Pulpit Rock:</p>
-                <img src="img/Image7.jpg" alt="Pulpit Rock" style="width:150px;height:150px">
-            </a>
+        <div class="span4" ng-repeat = "user in users | filter : {rank : '3'} ">
+            <div class="clearfix content-heading">
+                <a href="{{user.picture}}" class="thumbnail">
+                    <img class="pull-left" ng-src="{{user.picture}}" alt="{{user.name}}" style="width:150px;height:150px">
+                    <p>{{user.name}}</p>
+                    <p>Badges:</p>
+                    <div class="pull-left"  ng-repeat = "badge in user.ownedBadges">
+                        <img ng-src = "{{badges[badge].location}}"  alt = "{{badges[badge].name}}" style="width:40px;height:40px">
+                    </div>
+                    <div class ="clearfix"> </div>
+                </a>
+            </div>
         </div>
-
-        <div class="span3">
-            <a href="img/Image8.jpg" class="thumbnail">
-                <p>Moustiers-Sainte-Marie.</p>
-                <img src="img/Image8.jpg" alt="Moustiers Sainte Marie" style="width:150px;height:150px">
-            </a>
-        </div>
-
-        <div class="span3">
-            <a href="img/Image9.jpg" class="thumbnail">
-                <p>The Cinque Terre</p>
-                <img src="img/Image9.jpg" alt="Cinque Terre" style="width:150px;height:150px">
-            </a>
-        </div>
-
     </div>
 </div>
 
